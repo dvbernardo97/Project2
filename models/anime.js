@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-const homeSchema = new Schema(
+const animeSchema = new Schema(
     {
         name: String,
-        required: true,
     }
 )
 
-module.exports = mongoose.model("Home", homeSchema);
+module.exports = mongoose.model("Anime", animeSchema);

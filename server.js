@@ -13,7 +13,7 @@ require("./config/passport");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-// var listRouter = require("../routes/homes");
+var animeRouter = require("./routes/animes")
 
 var app = express();
 
@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
 // ROUTES
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-// app.use("/", listRouter);
+app.use("/animes", animeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
