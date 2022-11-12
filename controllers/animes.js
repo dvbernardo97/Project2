@@ -6,8 +6,9 @@ module.exports = {
     new: newAnime,
     create,
     show,
-    delete: deleteAnime
-
+    delete: deleteAnime,
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -35,15 +36,27 @@ function show(req, res) {
     res.render('/animes')
 }
 
-
-function deleteAnime(req, res, next) {
-    Anime.find(req.params.id).then(function (anime) {
-        const animes = anime.id(req.params.id)
-        anime.remove()
-        anime.save().then(function () {
-            res.redirect('/animes')
-        }).catch(function (err) {
-            return next(err)
-        })
-    })
+function deleteAnime(req, res) {
+    Anime.findOneAndDelete(
+        req.params.id, function (err) {
+            res.redirect("/")
+        }
+    )
 }
+
+function edit(req, res) {
+    Anime.findOne({'animes._id': req.params.id}).then(function(anime) {
+        res.render('animes/edit', { title: 'Anime Update', anime })
+      });
+    }
+
+function update(req, res) {
+    Anime.findOne({'_id': req.params.id})
+    .then(function(anime) {
+      anime.name = req.body.name
+      anime.save(function(err) {
+        if (err) return res.redirect('/animes');
+        res.redirect('/animes');
+      });
+  })
+  }

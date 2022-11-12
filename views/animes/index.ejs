@@ -5,5 +5,6 @@
  <form action="/animes/<%= a.id %>?_method=DELETE" id="delete-form" method="POST">
      <button type="submit">X</button>
     </form>
-                <% }) %>
+    <a href="/animes/<%=a.id%>/edit">Edit it</a>
+ <% }) %>
 <%-include('../partials/footer')%>

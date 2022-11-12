@@ -1,0 +1,8 @@
+<%-include('../partials/header')%>
+<h3>Update Anime</h3>
+<form action="/animes/<%= anime._id %>/?_method=PUT" method="POST" autocomplete="off">
+  Name: <br><input type="text" name="name" value="<%= anime.name %>"><br>
+  <br><button type="submit">Save Anime</button>
+</form>
+   
+<%-include('../partials/footer')%>
