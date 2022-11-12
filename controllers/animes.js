@@ -5,7 +5,9 @@ module.exports = {
     index,
     new: newAnime,
     create,
-    show
+    show,
+    delete: deleteAnime
+
 }
 
 function index(req, res) {
@@ -31,4 +33,17 @@ function create(req, res) {
 
 function show(req, res) {
     res.render('/animes')
+}
+
+
+function deleteAnime(req, res, next) {
+    Anime.find(req.params.id).then(function (anime) {
+        const animes = anime.id(req.params.id)
+        anime.remove()
+        anime.save().then(function () {
+            res.redirect('/animes')
+        }).catch(function (err) {
+            return next(err)
+        })
+    })
 }

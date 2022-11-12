@@ -1,6 +1,9 @@
 <%-include('../partials/header')%>
-   
-<% animes.forEach(function (a){ %> 
-  <%= a.name %> 
-<% }) %>  
- <%-include('../partials/footer')%>
+
+    <% animes.forEach(function (a){ %>
+        <%= a.name %>
+ <form action="/animes/<%= a.id %>?_method=DELETE" id="delete-form" method="POST">
+     <button type="submit">X</button>
+    </form>
+                <% }) %>
+<%-include('../partials/footer')%>

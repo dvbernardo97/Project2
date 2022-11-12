@@ -7,6 +7,7 @@ router.get("/", animeCtrl.index);
 router.get("/new", animeCtrl.new);
 router.post("/", animeCtrl.create);
 router.get("/:id", animeCtrl.show);
+router.delete("/:id",animeCtrl.delete)
 
 
 
