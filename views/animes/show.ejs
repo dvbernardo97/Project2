@@ -1,0 +1,14 @@
+<%-include('../partials/header')%>
+
+    <p>Show Page</p>
+    <%=anime.name %>
+    <form method = "POST" action = "/animes/<%=anime.id%>/comments">
+    <textarea name = "comment"></textarea>
+    <button type="submit">Add Comment</button>
+    </form>
+    <p>Comments</p>
+    <%anime.comment.forEach(function(c){%>
+        <p>c.comment</p>
+        <% }) %>
+        
+<%-include('../partials/footer')%>

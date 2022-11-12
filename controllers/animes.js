@@ -33,7 +33,9 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    res.render('/animes')
+    Anime.findById(req.params.id, function(err, anime){
+        res.render('animes/show', {anime})
+    })
 }
 
 function deleteAnime(req, res) {
@@ -45,18 +47,18 @@ function deleteAnime(req, res) {
 }
 
 function edit(req, res) {
-    Anime.findOne({'animes._id': req.params.id}).then(function(anime) {
+    Anime.findOne({ 'animes._id': req.params.id }).then(function (anime) {
         res.render('animes/edit', { title: 'Anime Update', anime })
-      });
-    }
+    });
+}
 
 function update(req, res) {
-    Anime.findOne({'_id': req.params.id})
-    .then(function(anime) {
-      anime.name = req.body.name
-      anime.save(function(err) {
-        if (err) return res.redirect('/animes');
-        res.redirect('/animes');
-      });
-  })
-  }
+    Anime.findOne({ '_id': req.params.id })
+        .then(function (anime) {
+            anime.name = req.body.name
+            anime.save(function (err) {
+                if (err) return res.redirect('/animes');
+                res.redirect('/animes');
+            });
+        })
+}
