@@ -1,6 +1,7 @@
 <%-include('../partials/header')%>
 
     <% animes.forEach(function (a){ %>
+
         <%= a.name %>
             <a href="/animes/<%=a.id%>">Show Details</a>
             <form action="/animes/<%= a.id %>?_method=DELETE" id="delete-form" method="POST">
@@ -8,4 +9,5 @@
             </form>
             <a href="/animes/<%=a.id%>/edit">Edit it</a>
             <% }) %>
+
 <%-include('../partials/footer')%>
