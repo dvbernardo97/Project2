@@ -1,3 +1,4 @@
+##Anime Title##
 Anime tracker
 
 ##ERD##
@@ -9,10 +10,15 @@ Anime tracker
  ![page3](public/images/page3.jpg)
 
 
-##TECH
-Technologies used:
-Express, Node.js, MongoDB, Mongoose
+##TECH <br>
+Technologies used:<br>
+Express, <br>Node.js,<br> MongoDB,<br>Mongoose
 
-##Trello##
-Trello link:
+##Trello##<br>
+Trello link:<br>
 https://trello.com/invite/b/Jl65rX5m/ATTIc3b5c1f1ae09a7b76261bcb8cf68f6888A96F50C/project-2
+
+##updates##<br>
+1, update and edit quotes made,<br>
+2, delete quotes made<br>
+3 add pic to anime when made
