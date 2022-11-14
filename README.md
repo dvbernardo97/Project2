@@ -8,7 +8,9 @@ Anime tracker
  ![page1](public/images/page1.jpg)
  ![page2](public/images/page2.jpg)
  ![page3](public/images/page3.jpg)
-
+![homepage](public/images/main%20home%20page.png)
+![addpage](public/images/add%20page.png)
+![editpage](public/images/edit%20page.png)
 
 ##TECH <br>
 Technologies used:<br>
